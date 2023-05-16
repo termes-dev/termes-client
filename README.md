@@ -4,10 +4,17 @@
 
 ``` python
 from termes.client import Client
+from termes.types import Session
 
 API_HOST = "http://localhost:8080/"  # define Termes API server host
 
-session = Session(...)  # load session, if saved
+session = Session(
+    id=...,
+    user_id=...,
+    created_at=...,
+    expires_on=...,
+    token=...
+)  # load session, if saved
 
 
 async with Client(API_HOST, session) as client:
